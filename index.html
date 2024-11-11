@@ -12,48 +12,50 @@
             box-sizing: border-box;
             font-family: Arial, sans-serif;
         }
-          /* Responsive adjustments */
-    @media (max-width: 768px) {
-        .navbar ul {
-            flex-direction: column;
-            align-items: center;
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .navbar ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .container {
+                flex-direction: column;
+                padding: 10px;
+                text-align: center;
+            }
+
+            .description {
+                margin-right: 0;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+
+            .navbar h1, .description h2 {
+                font-size: 1.2em;
+            }
         }
 
-        .container {
-            flex-direction: column;
-            padding: 10px;
-            text-align: center;
+        @media (max-width: 480px) {
+            .navbar h1 {
+                font-size: 1em;
+            }
+
+            .navbar ul li a {
+                font-size: 0.9em;
+            }
+
+            .description h2 {
+                font-size: 1.5em;
+            }
+
+            .button {
+                padding: 8px 16px;
+                font-size: 0.9em;
+            }
         }
 
-        .description {
-            margin-right: 0;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .navbar h1, .description h2 {
-            font-size: 1.2em;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .navbar h1 {
-            font-size: 1em;
-        }
-
-        .navbar ul li a {
-            font-size: 0.9em;
-        }
-
-        .description h2 {
-            font-size: 1.5em;
-        }
-
-        .button {
-            padding: 8px 16px;
-            font-size: 0.9em;
-        }
-    }
         body {
             background-color: #f3f4f6;
             color: #333;
@@ -72,9 +74,11 @@
             justify-content: center;
             color: #fff;
         }
+        
         .top-bar img, .bottom-bar img {
             height: 40px;
         }
+        
         .moving-logo {
             position: absolute;
             top: 0;
@@ -82,6 +86,7 @@
             height: 40px;
             animation: moveLogo 10s linear infinite;
         }
+        
         .bottom-bar .moving-logo {
             top: auto;
             bottom: 0;
@@ -97,25 +102,64 @@
             background-color: #222;
             color: #fff;
         }
+        
         .navbar h1 {
             font-size: 1.5em;
             color: #ff5733;
         }
+        
         .navbar ul {
             display: flex;
             list-style: none;
         }
+        
         .navbar ul li {
             margin-left: 15px;
         }
+        
         .navbar ul li a {
             color: #fff;
             text-decoration: none;
             font-size: 1em;
             transition: color 0.3s;
         }
+        
         .navbar ul li a:hover {
             color: #ff5733;
+        }
+
+        /* Moving logo animation for top bar */
+        .moving-logo {
+            position: absolute;
+            top: 0;
+            left: -150px;
+            height: 40px;
+            animation: moveLogo 10s linear infinite;
+        }
+
+        .bottom-bar .moving-logo {
+            top: auto;
+            bottom: 0;
+            animation-delay: 5s;
+        }
+
+        /* Set specific delays for each moving logo */
+        .moving-logo:nth-child(2) { animation-delay: 0s; } /* First logo */
+        .moving-logo:nth-child(3) { animation-delay: 2.5s; } /* Second logo */
+        .moving-logo:nth-child(4) { animation-delay: 5s; } /* Third logo */
+        .moving-logo:nth-child(5) { animation-delay: 7.5s; } /* Fourth logo */
+
+        /* Moving logo animation keyframes */
+        @keyframes moveLogo {
+            0% {
+                left: -150px;
+            }
+            50% {
+                left: 100vw;
+            }
+            100% {
+                left: -150px;
+            }
         }
     
         /* Main content area with softer rainbow effect */
@@ -129,6 +173,7 @@
             animation: rainbowBackground 5s linear infinite;
             color: #fff;
         }
+        
         .description {
             flex: 1;
             font-size: 1.2em;
@@ -138,16 +183,48 @@
             transform: translateX(-20px);
             animation: fadeInLeft 1s forwards;
         }
+        
         .description h2 {
             font-size: 2em;
             color: #ff5733;
         }
+
+        /* Adjust right-side image styles */
         .image {
             flex: 1;
             max-width: 100%;
-            animation: rotateIn 1.5s ease-in-out;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-    
+
+        .image img {
+            width: 80%;
+            height: auto;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a soft shadow */
+        }
+        .image img {
+    width: 60%; /* Reduced size for desktop */
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .image img {
+        width: 50%; /* Reduced size on medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .image img {
+        width: 40%; /* Further reduced size on small screens */
+    }
+}
+
+     
+
         /* Animations */
         @keyframes fadeInLeft {
             to {
@@ -155,25 +232,13 @@
                 transform: translateX(0);
             }
         }
+        
         @keyframes rotateIn {
             from {
                 transform: rotate(-360deg);
             }
             to {
                 transform: rotate(0deg);
-            }
-        }
-    
-        /* Moving logo animation */
-        @keyframes moveLogo {
-            0% {
-                left: -150px;
-            }
-            50% {
-                left: 100vw;
-            }
-            100% {
-                left: -150px;
             }
         }
     
@@ -197,6 +262,7 @@
             border-radius: 5px;
             transition: background-color 0.3s, transform 0.3s;
         }
+        
         .button:hover {
             background-color: #d94824;
             transform: scale(1.1);
@@ -209,15 +275,18 @@
             text-align: center;
             padding: 10px 0;
         }
+        
         .footer p {
             font-size: 1em;
             color: #aaa;
         }
+        
         .footer a {
             color: #ff5733;
             text-decoration: none;
             transition: color 0.3s;
         }
+        
         .footer a:hover {
             color: #d94824;
         }
@@ -225,12 +294,15 @@
 </head>
 <body>
 
-    <!-- Top bar with static and moving logo -->
+    <!-- Top bar with static and moving logos -->
     <div class="top-bar">
-        <img src="your-logo.png" alt="Logo"> <!-- Static Logo -->
-        <img src="moving-logo.png" class="moving-logo" alt="Moving Logo"> <!-- Moving Logo -->
+        <img src="https://res.cloudinary.com/dl8dmkhmv/image/upload/v1720065209/IMG_20240515_080836_nr89j0.jpg" alt="Logo"> <!-- Static Logo -->
+        <img src="https://res.cloudinary.com/dl8dmkhmv/image/upload/v1720543296/1000013995-removebg-preview_bqhumz.png" class="moving-logo" alt="Moving Logo 1">
+        <img src="https://res.cloudinary.com/dl8dmkhmv/image/upload/v1720543296/1000013996-removebg-preview_zr2qxd.png" class="moving-logo" alt="Moving Logo 2">
+        <img src="https://res.cloudinary.com/dl8dmkhmv/image/upload/v1720543296/1000013997-removebg-preview_kegjqg.png" class="moving-logo" alt="Moving Logo 3">
+        <img src="https://res.cloudinary.com/dl8dmkhmv/image/upload/v1720543296/1000013998-removebg-preview_1_pkp2xj.png" class="moving-logo" alt="Moving Logo 4">
     </div>
-
+    
     <!-- Navbar -->
     <header class="navbar">
         <h1>ROYAL_OF_ILLEGAL</h1>
@@ -253,15 +325,18 @@
 
         <!-- Image on the right side -->
         <div class="image">
-            <img src="your-image.jpg" alt="Image" style="width: 100%; height: auto; border-radius: 50%;">
+            <img src="https://res.cloudinary.com/dl8dmkhmv/image/upload/v1729778792/IMG_20241012_091803_wofrlp.jpg" alt="Image">
         </div>
     </section>
 
-    <!-- Bottom bar with moving logo -->
+    <!-- Bottom bar with moving logos -->
     <div class="bottom-bar">
-        <img src="moving-logo.png" class="moving-logo" alt="Moving Logo"> <!-- Moving Logo -->
+        <img src="https://res.cloudinary.com/dl8dmkhmv/image/upload/v1720543296/1000013995-removebg-preview_bqhumz.png" class="moving-logo" alt="Moving Logo 1">
+        <img src="https://res.cloudinary.com/dl8dmkhmv/image/upload/v1720543296/1000013996-removebg-preview_zr2qxd.png" class="moving-logo" alt="Moving Logo 2">
+        <img src="https://res.cloudinary.com/dl8dmkhmv/image/upload/v1720543296/1000013997-removebg-preview_kegjqg.png" class="moving-logo" alt="Moving Logo 3">
+        <img src="https://res.cloudinary.com/dl8dmkhmv/image/upload/v1720543296/1000013998-removebg-preview_1_pkp2xj.png" class="moving-logo" alt="Moving Logo 4">
     </div>
-
+    
     <!-- Footer with Creator link -->
     <footer class="footer">
         <p>Created by <a href="#creator">ROYAL_OF_ILLEGAL</a></p>
@@ -269,4 +344,3 @@
 
 </body>
 </html>
-
