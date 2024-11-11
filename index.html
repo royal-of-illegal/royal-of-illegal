@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROYAL_OF_ILLEGAL</title>
+    <style>
+        /* General reset and style */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+          /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .navbar ul {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            flex-direction: column;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .description {
+            margin-right: 0;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .navbar h1, .description h2 {
+            font-size: 1.2em;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .navbar h1 {
+            font-size: 1em;
+        }
+
+        .navbar ul li a {
+            font-size: 0.9em;
+        }
+
+        .description h2 {
+            font-size: 1.5em;
+        }
+
+        .button {
+            padding: 8px 16px;
+            font-size: 0.9em;
+        }
+    }
+        body {
+            background-color: #f3f4f6;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+    
+        /* Static and moving logo styles */
+        .top-bar, .bottom-bar {
+            position: relative;
+            background-color: #222;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+        }
+        .top-bar img, .bottom-bar img {
+            height: 40px;
+        }
+        .moving-logo {
+            position: absolute;
+            top: 0;
+            left: -150px;
+            height: 40px;
+            animation: moveLogo 10s linear infinite;
+        }
+        .bottom-bar .moving-logo {
+            top: auto;
+            bottom: 0;
+            animation-delay: 5s;
+        }
+    
+        /* Navbar style */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: #222;
+            color: #fff;
+        }
+        .navbar h1 {
+            font-size: 1.5em;
+            color: #ff5733;
+        }
+        .navbar ul {
+            display: flex;
+            list-style: none;
+        }
+        .navbar ul li {
+            margin-left: 15px;
+        }
+        .navbar ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1em;
+            transition: color 0.3s;
+        }
+        .navbar ul li a:hover {
+            color: #ff5733;
+        }
+    
+        /* Main content area with softer rainbow effect */
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            flex: 1;
+            background: rgba(255, 255, 255, 0.7); /* Soft overlay effect */
+            animation: rainbowBackground 5s linear infinite;
+            color: #fff;
+        }
+        .description {
+            flex: 1;
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-right: 20px;
+            opacity: 0;
+            transform: translateX(-20px);
+            animation: fadeInLeft 1s forwards;
+        }
+        .description h2 {
+            font-size: 2em;
+            color: #ff5733;
+        }
+        .image {
+            flex: 1;
+            max-width: 100%;
+            animation: rotateIn 1.5s ease-in-out;
+        }
+    
+        /* Animations */
+        @keyframes fadeInLeft {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        @keyframes rotateIn {
+            from {
+                transform: rotate(-360deg);
+            }
+            to {
+                transform: rotate(0deg);
+            }
+        }
+    
+        /* Moving logo animation */
+        @keyframes moveLogo {
+            0% {
+                left: -150px;
+            }
+            50% {
+                left: 100vw;
+            }
+            100% {
+                left: -150px;
+            }
+        }
+    
+        /* Softer rainbow background animation for main content */
+        @keyframes rainbowBackground {
+            0% { background-color: rgba(255, 0, 0, 0.3); }
+            20% { background-color: rgba(255, 165, 0, 0.3); }
+            40% { background-color: rgba(255, 255, 0, 0.3); }
+            60% { background-color: rgba(0, 128, 0, 0.3); }
+            80% { background-color: rgba(0, 0, 255, 0.3); }
+            100% { background-color: rgba(75, 0, 130, 0.3); }
+        }
+    
+        /* Button style with hover effect */
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ff5733;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .button:hover {
+            background-color: #d94824;
+            transform: scale(1.1);
+        }
+    
+        /* Footer style */
+        .footer {
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .footer p {
+            font-size: 1em;
+            color: #aaa;
+        }
+        .footer a {
+            color: #ff5733;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer a:hover {
+            color: #d94824;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top bar with static and moving logo -->
+    <div class="top-bar">
+        <img src="your-logo.png" alt="Logo"> <!-- Static Logo -->
+        <img src="moving-logo.png" class="moving-logo" alt="Moving Logo"> <!-- Moving Logo -->
+    </div>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <h1>ROYAL_OF_ILLEGAL</h1>
+        <ul>
+            <li><a href="#home.html">Home</a></li>
+            <li><a href="#about.html">About</a></li>
+            <li><a href="#projects.">Projects</a></li>
+            <li><a href="#contact.hmtl">Contact</a></li>
+        </ul>
+    </header>
+
+    <!-- Main Content -->
+    <section class="container">
+        <!-- Description on the left side -->
+        <div class="description">
+            <h2>Welcome to ROYAL_OF_ILLEGAL</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam deserunt molestias, dolorum dolores sequi maxime quae commodi et quidem atque fugiat facere pariatur placeat nulla eligendi fugit rem sapiente magnam.</p>
+            <a href="#projects" class="button">RESUME</a>
+        </div>
+
+        <!-- Image on the right side -->
+        <div class="image">
+            <img src="your-image.jpg" alt="Image" style="width: 100%; height: auto; border-radius: 50%;">
+        </div>
+    </section>
+
+    <!-- Bottom bar with moving logo -->
+    <div class="bottom-bar">
+        <img src="moving-logo.png" class="moving-logo" alt="Moving Logo"> <!-- Moving Logo -->
+    </div>
+
+    <!-- Footer with Creator link -->
+    <footer class="footer">
+        <p>Created by <a href="#creator">ROYAL_OF_ILLEGAL</a></p>
+    </footer>
+
+</body>
+</html>
+
