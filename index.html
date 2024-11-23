@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacker Intro</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Courier New', Courier, monospace;
+            color: green;
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                              linear-gradient(180deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                              linear-gradient(180deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+            animation: animateBackground 10s linear infinite;
+        }
+
+        @keyframes animateBackground {
+            0% {
+                background-position: 0 0, 0 0, 0 0, 0 0;
+            }
+            100% {
+                background-position: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+            }
+        }
+
+        .intro {
+            text-align: center;
+            max-width: 90%;
+            background: rgba(0, 0, 0, 0.7); /* Darker background for better text readability */
+            padding: 20px;
+            border: 2px solid currentColor;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        #hacker-text {
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            white-space: pre-wrap;
+            overflow: hidden;
+        }
+
+        #continue-btn {
+            background-color: green;
+            color: black;
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        #continue-btn:hover {
+            background-color: lime;
+        }
+
+        @media (max-width: 1200px) {
+            h1 {
+                font-size: 1.8em;
+            }
+
+            #hacker-text {
+                font-size: 1.1em;
+            }
+
+            #continue-btn {
+                padding: 8px 16px;
+                font-size: 0.9em;
+            }
+        }
+
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 1.6em;
+            }
+
+            #hacker-text {
+                font-size: 1em;
+            }
+
+            #continue-btn {
+                padding: 6px 12px;
+                font-size: 0.8em;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.4em;
+            }
+
+            #hacker-text {
+                font-size: 0.9em;
+            }
+
+            #continue-btn {
+                padding: 5px 10px;
+                font-size: 0.7em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.2em;
+            }
+
+            #hacker-text {
+                font-size: 0.8em;
+            }
+
+            #continue-btn {
+                padding: 4px 8px;
+                font-size: 0.6em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="intro">
+        <h1>WELCOME TO THE ROYAL_OF_ILLEGAL</h1>
+        <p id="hacker-text"></p>
+        <button id="continue-btn"><a href="main.html" style="color: black; text-decoration: none;">Continue</a></button>
+    </div>
+    <script>
+        // Obfuscated text for hacker effect
+        const hackerText = atob("QWNjZXNzaW5nIHRoZSBzaXRlIG5vdyAuLi5cblxcbkknTSBDSEVUSEFOTl9ST1lBTFNUQVJcblxubm93IHUgY2FuIGNvbnRpbnVlIHRvIHNpdGUgLi4uIFdlbGNvbWU=");
+
+        let index = 0;
+        function typeText() {
+            if (index < hackerText.length) {
+                document.getElementById("hacker-text").innerText += hackerText.charAt(index);
+                index++;
+                setTimeout(typeText, 100);
+            }
+        }
+
+        // Color Toggle
+        function toggleColors() {
+            const body = document.body;
+            const intro = document.querySelector('.intro');
+            const continueBtn = document.getElementById('continue-btn');
+
+            if (body.style.backgroundColor === 'black') {
+                body.style.backgroundColor = 'red';
+                body.style.color = 'green';
+                intro.style.borderColor = 'green';
+                continueBtn.style.backgroundColor = 'green';
+                body.style.backgroundImage = `
+                    linear-gradient(90deg, rgba(0, 255, 0, 0.1) 1px, transparent 1px),
+                    linear-gradient(180deg, rgba(0, 255, 0, 0.1) 1px, transparent 1px)
+                `;
+            } else {
+                body.style.backgroundColor = 'black';
+                body.style.color = 'red';
+                intro.style.borderColor = 'red';
+                continueBtn.style.backgroundColor = 'red';
+                body.style.backgroundImage = `
+                    linear-gradient(90deg, rgba(255, 0, 0, 0.1) 1px, transparent 1px),
+                    linear-gradient(180deg, rgba(255, 0, 0, 0.1) 1px, transparent 1px)
+                `;
+            }
+        }
+
+        // Disable right-click and some dev tools
+        document.addEventListener('contextmenu', (event) => event.preventDefault());
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'F12' || (event.ctrlKey && event.shiftKey && event.key === 'I')) {
+                event.preventDefault();
+            }
+        });
+
+        // Display warning in console
+        console.log('%cStop!', 'color: red; font-size: 30px; font-weight: bold;');
+        console.log('%cThis is a restricted area. Proceeding further is at your own risk.', 'color: yellow; font-size: 16px;');
+
+        // Execute on page load
+        window.onload = () => {
+            typeText();
+            setInterval(toggleColors, 2000);
+        };
+    </script>
+</body>
+</html>
