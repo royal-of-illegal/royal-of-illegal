@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoyalStar-Details.in</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: black;
+            overflow: hidden;
+        }
+        .phone-container {
+            width: 360px;
+            height: 640px;
+            margin: 50px auto;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            border-radius: 25px;
+            background: rgba(0, 0, 0, 0.6) url('https://example.com/your-background-image.jpg') no-repeat center center / cover;
+            position: relative;
+            overflow: hidden;
+            z-index: 2;
+            animation: rainbow 8s linear infinite;
+        }
+        .phone-logo {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            z-index: 2;
+        }
+        .phone-logo::after {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: conic-gradient(from 0deg, #ff0000, #00ff00, #0000ff, #ffff00, #ff0000);
+            animation: spin 2s linear infinite;
+            z-index: -1;
+            box-sizing: border-box;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .title {
+            position: absolute;
+            top: 70px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .status-bar {
+            display: flex;
+            justify-content: space-between;
+            color: white;
+            font-size: 18px;
+            padding: 5px;
+        }
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 15px;
+            margin-top: 120px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .app-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+            text-align: center;
+            width: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        .app-icon img {
+            width: 100px;
+            height: 100px;
+            background-color: #333;
+            border-radius: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        .app-icon::before {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            width: 300%;
+            height: 300%;
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.2) 75%);
+            opacity: 0.3;
+            transform: rotate(30deg);
+            animation: shine 1.5s infinite;
+            z-index: 2;
+        }
+        @keyframes shine {
+            0% { transform: translateX(-100%) rotate(30deg); }
+            100% { transform: translateX(100%) rotate(30deg); }
+        }
+        .app-icon span {
+            margin-top: 5px;
+        }
+        .matrix-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://res.cloudinary.com/dl8dmkhmv/image/upload/v1720322091/13.speed-internet-technology-background_qwylnc.jpg'), #000;
+            z-index: 1;
+            opacity: 0.2;
+        }
+        .matrix-text {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            color: #0f0;
+            font-size: 12px;
+            overflow: hidden;
+            animation: matrix-animation 10s linear infinite;
+        }
+        @keyframes matrix-animation {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100%); }
+        }
+        @keyframes rainbow {
+            0% { background-color: #660000; }
+            14% { background-color: #995700; }
+            28% { background-color: #999900; }
+            42% { background-color: #006600; }
+            57% { background-color: #000066; }
+            71% { background-color: #330066; }
+            85% { background-color: #660066; }
+            100% { background-color: #660000; }
+        }
+        .button-link {
+            display: inline-block;
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            color: white;
+            background: #660000;
+            border: none;
+            border-radius: 15px;
+            text-decoration: none;
+            font-size: 16px;
+            text-align: center;
+            transition: background-color 0.3s, color 0.3s;
+            box-sizing: border-box;
+        }
+        .button-link:hover {
+            background-color: #006600;
+            color: #ffffff;
+            transform: scale(1.05);
+        }
+        .button-link:active {
+            background-color: #d8e620;
+            color: #000000;
+        }
+        .gray-button {
+            display: inline-block;
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            color: white;
+            background: gray;
+            border: none;
+            border-radius: 15px;
+            text-decoration: none;
+            font-size: 16px;
+            text-align: center;
+            transition: background-color 0.3s, color 0.3s;
+            box-sizing: border-box;
+            margin-top: 5px;
+        }
+        .gray-button:hover {
+            background-color: #555;
+            color: #ffffff;
+            transform: scale(1.05);
+        }
+        .gray-button:active {
+            background-color: #333;
+            color: #ffffff;
+        }
+        .conteudo {
+    display: inline-flex;
+    border-bottom: 4px solid #EFEFEF;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.conteudo img {
+    width: 60px;
+    filter: drop-shadow(0px 0px 1px #4b4b50);
+    animation: flutuar 3s linear infinite;
+}
+
+@keyframes flutuar {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-23px);
+    }
+}
+
+.conteudo img:nth-child(2) {
+    animation-delay: .2s;
+}
+
+.conteudo img:nth-child(3) {
+    animation-delay: .4s;
+}
+
+.conteudo img:nth-child(4) {
+    animation-delay: .6s;
+}
+
+.conteudo img:nth-child(5) {
+    animation-delay: .85s;
+}
+
+        .circle-menu {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #660000;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .menu-toggle {
+            font-size: 32px;
+            color: white;
+            line-height: 0;
+        }
+        .menu-items {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+            pointer-events: none;
+        }
+        .menu-item {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: #006600;
+            color: white;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: transform 0.3s, opacity 0.3s;
+            opacity: 0;
+            pointer-events: none;
+        }
+        .menu-item:nth-child(1) { top: 0; left: 50%; transform: translate(-50%, -50%); }
+        .menu-item:nth-child(2) { top: 50%; left: 100%; transform: translate(-50%, -50%); }
+        .menu-item:nth-child(3) { top: 100%; left: 50%; transform: translate(-50%, -50%); }
+        .menu-item:nth-child(4) { top: 50%; left: 0%; transform: translate(-50%, -50%); }
+        .login-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 80px;
+            height: 40px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            background-color: #555;
+            color: #ffffff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .login-button:hover {
+            background-color: #333;
+        }
+        .current-time {
+            position: absolute;
+            bottom: 70px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="matrix-background"></div>
+    <div class="matrix-text">Hello welcome the world of RoyalStar</div>
+    <div class="phone-container">
+        <img class="phone-logo" src="https://res.cloudinary.com/dl8dmkhmv/image/upload/v1720065209/IMG_20240515_080836_nr89j0.jpg" alt="royalstar logo">
+        <div class="status-bar">
+            <span>99%</span>
+            <span>5G</span>
+        </div>
+        <div class="title">Royal_Of_Illegal</div>
+        <div class="app-grid">
+            <div class="app-icon">
+                <img src="https://res.cloudinary.com/dl8dmkhmv/image/upload/v1720425576/20240629_174053_a3rr4f.jpg" alt="App 1">
+                <span>RoyalStar</span>
+                <a href="myslef.html" class="gray-button">Portfolio</a>
+            </div>
+            <div class="app-icon">
+                <img src="https://res.cloudinary.com/dl8dmkhmv/image/upload/v1725199257/1000003917-removebg-preview_lid7zl.png" alt="App 2">
+                <span>Diary</span>
+                <a href="login1.html" class="gray-button">The Secrets</a>
+            </div>
+            <div class="app-icon">
+                <img src="https://res.cloudinary.com/dl8dmkhmv/image/upload/v1725202229/1000003971-removebg-preview_ic1zd7.png" alt="App 3">
+                <span>Calendar</span>
+                <a href="login1.html" class="gray-button">Calendar</a>
+            </div>
+            <div class="app-icon">
+                <img src="https://res.cloudinary.com/dl8dmkhmv/image/upload/v1725202229/1000003933-removebg-preview_mrnjz6.png" alt="App 4">
+                <span>Dates</span>
+                <a href="login1.html" class="gray-button">Target List</a>
+            </div>
+            <div class="app-icon">
+                <img src="https://res.cloudinary.com/dl8dmkhmv/image/upload/v1725202228/1000003930-removebg-preview_o3ia5m.png" alt="App 5">
+                <span>Your Libary</span>
+                <a href="login1.html" class="gray-button">HACKBOOKS</a>
+            </div>
+            <div class="app-icon">
+                <img src="https://res.cloudinary.com/dl8dmkhmv/image/upload/v1725202228/1000003972-removebg-preview_yyb5th.png" alt="App 6">
+                <span>MYDARK</span>
+                <a href="login1.html" class="gray-button">THE CRIMES</a>
+            </div>
+        </div>
+        <div class="current-time" id="current-time">00:00:00</div>
+        <button class="login-button"><a href="login.html">Login</a></button>
+        <div class="circle-menu">
+            <div class="menu-toggle">+</div>
+            <div class="menu-items">
+                <a href="myslef.html" class="menu-item">1</a>
+                <a href="#" class="menu-item">2</a>
+                <a href="#" class="menu-item">3</a>
+                <a href="#" class="menu-item">4</a>
+            </div>
+        </div></br></br></br>
+          <div class="conteudo">
+        <img src="https://res.cloudinary.com/dl8dmkhmv/image/upload/v1720542925/1000014005-removebg-preview_1_ebam6n.png" alt="Royal eagle">
+        <img src="https://res.cloudinary.com/dl8dmkhmv/image/upload/v1720543296/1000013995-removebg-preview_bqhumz.png" alt="B From BIMO">
+        <img src="https://res.cloudinary.com/dl8dmkhmv/image/upload/v1720543296/1000013996-removebg-preview_zr2qxd.png" alt="I From BIMO">
+        <img src="https://res.cloudinary.com/dl8dmkhmv/image/upload/v1720543296/1000013997-removebg-preview_kegjqg.png" alt="M From BIMO">
+        <img src="https://res.cloudinary.com/dl8dmkhmv/image/upload/v1720543296/1000013998-removebg-preview_1_pkp2xj.png" alt="O From BIMO">
+    </div>
+    </div>
+
+    <script>
+        // Function to update the current time every second
+function updateTime() {
+    const now = new Date();
+    const options = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
+    const timeString = now.toLocaleTimeString([], options);
+    document.getElementById('current-time').textContent = timeString; // Corrected line
+}
+
+setInterval(updateTime, 1000); // Update time every second
+        document.querySelector('.circle-menu').addEventListener('click', function() {
+            const menuItems = document.querySelector('.menu-items');
+            const menuItem = document.querySelectorAll('.menu-item');
+            menuItems.style.display = menuItems.style.display === 'block' ? 'none' : 'block';
+            menuItem.forEach((item, index) => {
+                setTimeout(() => {
+                    item.style.opacity = menuItems.style.display === 'block' ? '1' : '0';
+                    item.style.pointerEvents = menuItems.style.display === 'block' ? 'auto' : 'none';
+                    item.style.transform = menuItems.style.display === 'block' ? 'translate(0, 0)' : 'translate(-50%, -50%)';
+                }, index * 100);
+            });
+        });
+         // Disable right-click and some dev tools
+         document.addEventListener('contextmenu', (event) => event.preventDefault());
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'F12' || (event.ctrlKey && event.shiftKey && event.key === 'I')) {
+                event.preventDefault();
+            }
+        });
+
+        // Display warning in console
+        console.log('%cStop!', 'color: red; font-size: 30px; font-weight: bold;');
+        console.log('%cThis is a restricted area. Proceeding further is at your own risk.', 'color: yellow; font-size: 16px;');
+
+        // Execute on page load
+        window.onload = () => {
+            typeText();
+            setInterval(toggleColors, 2000);
+        };
+    </script>
+</body>
+</html>
