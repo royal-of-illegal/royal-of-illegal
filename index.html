@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Royal of illegal</title>
+    <title>Hacker Intro</title>
     <style>
         body {
             margin: 0;
@@ -139,10 +139,9 @@
         <button id="continue-btn"><a href="main.html" style="color: black; text-decoration: none;">Continue</a></button>
     </div>
     <script>
-        // Obfuscated text for hacker effect
-        const hackerText = atob("QWNjZXNzaW5nIHRoZSBzaXRlIG5vdyAuLi5cblxcbkknTSBDSEVUSEFOTl9ST1lBTFNUQVJcblxubm93IHUgY2FuIGNvbnRpbnVlIHRvIHNpdGUgLi4uIFdlbGNvbWU=");
-
+        const hackerText = "Accessing the site now ...\nI'M CHETHAN_ROYALSTAR...\nNOW U CAN CONTINUE TO SITE ...\n\nWelcome!";
         let index = 0;
+
         function typeText() {
             if (index < hackerText.length) {
                 document.getElementById("hacker-text").innerText += hackerText.charAt(index);
@@ -151,7 +150,6 @@
             }
         }
 
-        // Color Toggle
         function toggleColors() {
             const body = document.body;
             const intro = document.querySelector('.intro');
@@ -164,7 +162,9 @@
                 continueBtn.style.backgroundColor = 'green';
                 body.style.backgroundImage = `
                     linear-gradient(90deg, rgba(0, 255, 0, 0.1) 1px, transparent 1px),
-                    linear-gradient(180deg, rgba(0, 255, 0, 0.1) 1px, transparent 1px)
+                    linear-gradient(180deg, rgba(0, 255, 0, 0.1) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(0, 255, 0, 0.05) 1px, transparent 1px),
+                    linear-gradient(180deg, rgba(0, 255, 0, 0.05) 1px, transparent 1px)
                 `;
             } else {
                 body.style.backgroundColor = 'black';
@@ -173,13 +173,27 @@
                 continueBtn.style.backgroundColor = 'red';
                 body.style.backgroundImage = `
                     linear-gradient(90deg, rgba(255, 0, 0, 0.1) 1px, transparent 1px),
-                    linear-gradient(180deg, rgba(255, 0, 0, 0.1) 1px, transparent 1px)
+                    linear-gradient(180deg, rgba(255, 0, 0, 0.1) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255, 0, 0, 0.05) 1px, transparent 1px),
+                    linear-gradient(180deg, rgba(255, 0, 0, 0.05) 1px, transparent 1px)
                 `;
             }
         }
 
-        // Disable right-click and some dev tools
-        document.addEventListener('contextmenu', (event) => event.preventDefault());
+        window.onload = () => {
+            typeText();
+            setInterval(toggleColors, 2000); // Change colors every 2 seconds
+        };
+
+        document.getElementById("continue-btn").addEventListener("click", () => {
+            // Play sound effect
+            const audio = new Audio('your-sound-file.mp3'); // Replace with your sound file
+            audio.play();
+
+            window.location.href = "main.html";  // Replace with your web path
+        });
+         // Disable right-click and some dev tools
+         document.addEventListener('contextmenu', (event) => event.preventDefault());
         document.addEventListener('keydown', (event) => {
             if (event.key === 'F12' || (event.ctrlKey && event.shiftKey && event.key === 'I')) {
                 event.preventDefault();
