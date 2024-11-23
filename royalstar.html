@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio |ROYALSTAR</title>
+
+    <link rel="icon" type="png|image" href="/IMAGES/sailogo.png">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: black;
+    color: rgb(255, 255, 255);
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.548), green, rgba(0, 0, 0, 0.548));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    /* border-radius: 100px; */
+}
+
+.logo {
+    font-size: 25px;
+    color: green;
+    text-shadow: 5px 5px 10px black;
+    text-decoration: none;
+    font-weight: 600;
+    pointer-events: none;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    
+}
+
+.navbar a {
+    display: inline-block;
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    opacity: 0;
+    animation: slideTop .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+.navbar a::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background: black;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    transition: 0.6s;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+.navbar a:hover {
+    background: linear-gradient(45deg, rgb(0, 0, 0), rgb(0, 0, 0));
+    -webkit-text-fill-color: transparent;
+    background-clip: border-box;
+    -webkit-background-clip: text;
+}
+
+.home {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 70px 10% 0;
+}
+
+.home-content {
+    max-width: 600px;
+    padding: 50px;
+    /* margin-left: -30px; */
+}
+
+.home-content h1 {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.2;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: .7s;
+}   
+
+.home-content h3 {
+    font-size: 32px;
+    font-weight: 700;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.mu {
+    margin-top: 50px;
+}
+
+.home-content h1, h3 {
+    text-shadow: 5px 4px 10px green;
+}
+
+.home-content h3 span {
+    color: rgb(0, 255, 0);
+}
+
+.home-content p {
+    font-size: 16px;
+    margin: 20px 0 0;
+    text-align: left;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1.3s;
+}
+
+.home-sci a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: black;
+    border: 2px solid green;
+    border-radius: 50%;
+    font-size: 20px;
+    color: green;
+    text-decoration: none;
+    margin: 30px 15px 30px 0;
+    opacity: 0;
+    animation: zoomIn 1s ease forwards;
+    animation-delay: 0.4s;
+    
+}
+
+.home-sci a:hover {
+    background: green;
+    color: black;
+    box-shadow: 0 0 20px green;
+}
+
+.btn-box {
+    display: inline-block;
+    padding: 12px 28px;
+    background: green;
+    border-radius: 40px;
+    font-size: 16px;
+    color: black;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 0;
+    animation: zoomIn 1s ease forwards;
+    animation-delay: 0.4s;
+}
+
+.btn-box:hover {
+    box-shadow: 0 0 5px green,
+    0 0 25px green, 0 0 50px green,
+    0 0 100px green, 0 0 200px green;
+}
+
+.home-img {
+    width: 410px;
+    height: 410px;
+    opacity: 0;
+    animation: zoomIn 1s ease forwards, floatImage 4s ease-in-out infinite;
+    animation-delay: 2.1s, 3.1s;
+}
+.next{
+    align-item:center;
+    color:blue;
+}
+
+.home-img .glowing-circle {
+    width: 100%;
+    height: 100%;
+   
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-img .glowing-circle::after {
+    content: '';
+    position: absolute;
+    width: 380px;
+    height: 380px;
+    background-color:black;
+    border-radius: 50%;
+}
+
+.glowing-circle span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(black, rgba(0, 128, 0, 0.411));
+    border-radius: 50%;
+    animation: circleRotate 5s linear infinite;
+}
+
+.glowing-circle span:nth-child(1) {
+    filter: blur(10px);
+}
+
+.image img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    max-width: 350px;
+    object-fit: cover;
+}
+
+.glowing-circle .image {
+    position: relative;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    z-index: 1;
+}
+ marquee{
+     color:red;
+ }
+
+.navbar-1 a {
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 50px;
+    text-align-last: center;
+}
+
+.navbar-1 a.active, 
+.navbar-1 a:hover {
+    background: linear-gradient(45deg, rgb(0, 0, 0), rgb(0, 0, 0));
+    -webkit-text-fill-color: transparent;
+    background-clip: border-box;
+    -webkit-background-clip: text;
+}
+
+canvas {
+    position: fixed;
+    top: auto;
+    left: auto;
+    background-color: black;
+    z-index: -1;
+    background-size:cover;
+    background-blend-mode: multiply;
+    background-size: auto;
+    scroll-behavior: smooth;
+}
+
+
+/* ---------------------------About----------------------- */
+
+.about {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 70px 10% 0;
+    margin-top: 10% ;
+}
+    
+.about-img img{
+    padding: auto;
+}
+
+.about-content h3{
+    font-size: 32px;
+    font-weight: 700;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.about-content p{
+    font-size: 16px;
+    margin: 20px 0 0;
+    text-align: left;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1.3s;
+}
+
+/* Animation */
+@keyframes slideTop {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }    
+}
+
+@keyframes slideRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }    
+}
+
+@keyframes slideLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }    
+}
+
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes floatImage {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-24px);
+    }
+
+    100%{
+        transform: translate(0);
+    }
+}
+
+@keyframes circleRotate {
+    0% {
+        transform: rotate(0);
+    }
+    
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+</style>
+</head>
+<body>
+
+    <canvas id="matrixCanvas"></canvas>
+                                                        <!-- Matrix -->
+    <script src="/JAVASCRIPT/matrix.js"></script>
+
+    <header class="header">
+        <a href="#" class="logo">{WELCOME} </a>
+
+        <nav class="navbar">
+            <a href="#home" style="--i:1;" class="active">Home</a>
+            <a href="#about" style="--i:2;">About</a>
+            <a href="#skill" style="--i:3;">Skills</a>
+            <a href="#project" style="--i:4;">Projects</a>
+            <a href="#contact" style="--i:5;">Contact</a>
+        </nav>
+    </header>
+    
+    <section id="home" class="home">
+
+        <div class="home-content" data-scroll data-scroll-speed="-5" >
+            <h3 class="mu">Hello, I'ts ROYAL_OF_ILLEGAL</h3>
+            <h3>I'M CHETHAN_ROYALSTAR</h3>
+            <h3>And I'm <span class="pro-text">
+                <script>
+                   var typed = new Typed(".pro-text", {
+                      strings: [
+                        "Ethical Hacker",
+                        "c/c++ programmer",
+                        "Programmer",
+                        "Linux LOVER🖤",
+                        "Social user",
+                        "kali user"
+                      ],
+                      typeSpeed: 100,   
+                      backSpeed: 100,   
+                      backDelay: 1000,  
+                      loop: true        
+                    });
+                </script>
+            </span></h3>
+        
+            <p>  &emsp; &emsp;I'm a passionate technology enthusiast, skilled in ethical hacking with Kali Linux and currently pursuing studies in data science. My love for innovation drives me to explore and master the digital world. <br>
+            </p>
+
+            <div class="home-sci">
+                <h3>CONTAT</h3>
+                <a href="https://github.com" target="_blank"><i class='bx bxl-github'></i></a>
+                <a href="https://www.linkedin.com/in/chethan-royalstar-49750a320?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class='bx bxl-linkedin' ></i></a>
+                <a href="" target="_blank"><i class='bx bxl-whatsapp'></i></a>
+                <a href="https://www.instagram.com/royal_of_illegal?igsh=MXByOXJobmljbHlnNA==" target="_blank"><i class='bx bxl-instagram'></i></a>
+                <a href="https://x.com/royalofillegal" target="_blank"><i class='bx bxl-twitter'></i></a>
+            </div>
+           <a href="" class="btn-box" download="#">Download CV</a>
+        </div>
+
+        <div class="home-img">
+            <div class="glowing-circle">
+                <span></span>
+                <span></span>
+                <div class="image">
+                    <img src="https://res.cloudinary.com/dl8dmkhmv/image/upload/v1723949610/1000019383_amgmbo.png" alt="profile.pic">
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <button class="next"><a href="next.html">CONTINUE MAIN SITE</a></button>
+</body> 
+<script>
+    // Get the canvas element
+const canvas = document.getElementById("matrixCanvas");
+const ctx = canvas.getContext("2d");
+
+// Set the width and height of the canvas
+const canvasWidth = window.innerWidth;
+const canvasHeight = window.innerHeight;
+canvas.width = canvasWidth;
+canvas.height = canvasHeight;
+
+// Create an array of characters
+const characters = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"];
+
+// Create an array of columns
+const columns = Math.floor(canvasWidth / 20);
+
+// Initialize the y positions of the columns
+const yPositions = [];
+
+for (let i = 0; i < columns; i++) {
+  yPositions[i] = Math.random() * canvasHeight;
+}
+
+// Update the matrix animation
+function updateMatrix() {
+  // Set the background color
+  ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+  ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+
+  // Set the text color and font
+  ctx.fillStyle = "green";
+  ctx.font = "12px timesnewroman";
+
+  // Loop through each column
+  for (let i = 0; i < columns; i++) {
+    // Select a random character from the array
+    const character = characters[Math.floor(Math.random() * characters.length)];
+
+    // Set the y position of the current column
+    const y = yPositions[i];
+
+    // Draw the character at the current position
+    ctx.fillText(character, i * 20, y);
+
+    // Move the column down by 20 units
+    yPositions[i] += 20;
+
+    // Reset the position if it reaches the bottom of the canvas
+    if (yPositions[i] > canvasHeight && Math.random() > 0.98) {
+      yPositions[i] = 0;
+    }
+  }
+}
+
+// Render the matrix animation
+function renderMatrix() {
+  requestAnimationFrame(renderMatrix);
+  updateMatrix();
+}
+
+// Start the animation
+renderMatrix();
+function rand(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+function getRandomLetter() {
+ var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+ return alphabet[rand(0,alphabet.length - 1)]
+}
+function getRandomWord(word) {
+  var text = word.innerHTML
+  
+  var finalWord = ''
+  for(var i=0;i<text.length;i++) {
+    finalWord += text[i] == ' ' ? ' ' : getRandomLetter()
+  }
+ 
+  return finalWord
+}
+
+var word = document.querySelector('p')
+var interv = 'undefined'
+var canChange = false
+var globalCount = 0
+var count = 0
+var INITIAL_WORD = word.innerHTML;
+var isGoing = false
+
+function init() {
+ if(isGoing) return;
+ 
+ isGoing = true
+ var randomWord = getRandomWord(word)
+ word.innerHTML = randomWord
+
+ interv = setInterval(function() {
+  var finalWord = ''
+  for(var x=0;x<INITIAL_WORD.length;x++) {
+   if(x <= count && canChange) {
+    finalWord += INITIAL_WORD[x]
+   } else {
+    finalWord += getRandomLetter()
+   }
+  }
+  word.innerHTML = finalWord
+  if(canChange) {
+    count++
+  }
+  if(globalCount >= 20) {
+   canChange = true
+  }
+  if(count>=INITIAL_WORD.length) {
+   clearInterval(interv)
+   count = 0
+   canChange = false
+   globalCount = 0
+   isGoing = false
+  }
+  globalCount++
+ },50)
+ 
+}
+
+
+
+word.addEventListener('mouseenter', init)
+      // Disable right-click and some dev tools
+         document.addEventListener('contextmenu', (event) => event.preventDefault());
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'F12' || (event.ctrlKey && event.shiftKey && event.key === 'I')) {
+                event.preventDefault();
+            }
+        });
+
+        // Display warning in console
+        console.log('%cStop!', 'color: red; font-size: 30px; font-weight: bold;');
+        console.log('%cThis is a restricted area. Proceeding further is at your own risk.', 'color: yellow; font-size: 16px;');
+
+        // Execute on page load
+        window.onload = () => {
+            typeText();
+            setInterval(toggleColors, 2000);
+        };
+</script>
+</html> 
