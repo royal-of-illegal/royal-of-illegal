@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Library</title>
+    <style>
+        /* Basic styling for the body */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Container styling */
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Input styling */
+        input[type="text"], input[type="file"] {
+            width: calc(100% - 24px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        /* Button styling */
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        /* Book list styling */
+        .book-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .book-item {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .book-item span {
+            flex-grow: 1;
+            margin-right: 10px;
+        }
+    </style>
+</head>  <marquee>The site has errors in bakend it can under maintanece for storind the files.</marquee>
+<h1>ERROR IN BACKEND FILES IT UNDER MAINTANECE VISIT AGAIN LATER</h1>
+    
+<body>
+  <marquee>The site has errors in bakend it can under maintanece for storind the files.</marquee>
+
+    <div class="container">
+        <h2>Book Library</h2>
+        
+        <!-- Add Book Form -->
+        <input type="text" id="bookTitle" placeholder="Enter book title">
+        <input type="text" id="bookAuthor" placeholder="Enter book author">
+        <input type="file" id="bookFile" placeholder="Choose PDF file">
+        <button id="addBookButton">Add Book</button>
+        
+        <!-- Book List -->
+        <ul id="bookList" class="book-list"></ul>
+    </div>
+    <marquee>The site has errors in bakend it can under maintanece for storind the files.</marquee>
+<h1>ERROR IN BACKEND FILES IT UNDER MAINTANECE VISIT AGAIN LATER</h1>
+    <script>
+        const books = JSON.parse(localStorage.getItem('books')) || [];
+
+        // Cloudinary configuration (public credentials)
+        const cloudName = 'chethan chethan';  // Replace with your Cloudinary cloud name
+        const uploadPreset = 'your-upload-preset';  // Replace with your Cloudinary unsigned upload preset
+
+        // Function to upload file to Cloudinary
+        function uploadToCloudinary(file) {
+            const formData = new FormData();
+            formData.append('file', file);
+            formData.append('upload_preset', uploadPreset);
+
+            return fetch(`https://api.cloudinary.com/v1_1/${cloudName}/upload`, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => data.secure_url)
+            .catch(error => {
+                console.error('Error uploading to Cloudinary:', error);
+            });
+        }
+
+        // Function to add a book to the list
+        async function addBook(title, author, file) {
+            const link = await uploadToCloudinary(file);
+            books.push({ title, author, link });
+            localStorage.setItem('books', JSON.stringify(books)); // Save books to local storage
+            displayBooks();
+        }
+
+        // Function to display all books
+        function displayBooks() {
+            const bookList = document.getElementById('bookList');
+            bookList.innerHTML = '';
+            books.forEach((book) => {
+                const bookItem = document.createElement('li');
+                bookItem.className = 'book-item';
+                bookItem.innerHTML = `<span>${book.title} by ${book.author}</span>
+                                      <a href="${book.link}" target="_blank">View PDF</a>`;
+                bookList.appendChild(bookItem);
+            });
+        }
+
+        // Event listener for adding a book
+        document.getElementById('addBookButton').addEventListener('click', function() {
+            const title = document.getElementById('bookTitle').value;
+            const author = document.getElementById('bookAuthor').value;
+            const fileInput = document.getElementById('bookFile');
+            const file = fileInput.files[0];
+
+            if (title && author && file) {
+                addBook(title, author, file);
+                document.getElementById('bookTitle').value = '';
+                document.getElementById('bookAuthor').value = '';
+                fileInput.value = ''; // Clear file input
+            } else {
+                alert('Please fill in all fields');
+            }
+        });
+
+        // Load and display books on page load
+        window.onload = function() {
+            displayBooks();
+          // Disable right-click and some dev tools
+         document.addEventListener('contextmenu', (event) => event.preventDefault());
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'F12' || (event.ctrlKey && event.shiftKey && event.key === 'I')) {
+                event.preventDefault();
+            }
+        });
+
+        // Display warning in console
+        console.log('%cStop!', 'color: red; font-size: 30px; font-weight: bold;');
+        console.log('%cThis is a restricted area. Proceeding further is at your own risk.', 'color: yellow; font-size: 16px;');
+
+        // Execute on page load
+        window.onload = () => {
+            typeText();
+            setInterval(toggleColors, 2000);
+        };
+        }
+    </script>
+</body>  <marquee>The site has errors in bakend it can under maintanece for storind the files.</marquee>
+
+    
+</html>
