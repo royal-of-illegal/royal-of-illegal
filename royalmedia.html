@@ -229,5 +229,24 @@
         </div>
     </div>
 </body>
+    <script>
+        // Disable right-click and some dev tools
+         document.addEventListener('contextmenu', (event) => event.preventDefault());
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'F12' || (event.ctrlKey && event.shiftKey && event.key === 'I')) {
+                event.preventDefault();
+            }
+        });
+
+        // Display warning in console
+        console.log('%cStop!', 'color: red; font-size: 30px; font-weight: bold;');
+        console.log('%cThis is a restricted area. Proceeding further is at your own risk.', 'color: yellow; font-size: 16px;');
+
+        // Execute on page load
+        window.onload = () => {
+            typeText();
+            setInterval(toggleColors, 2000);
+        };
+    </script>
 </html>
 
