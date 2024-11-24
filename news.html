@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal of Illegal</title>
+    <style>
+        /* General styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #a8c0ff, #3f87a6); /* Soft gradient background */
+            color: #333;
+        }
+
+        /* Header styling */
+        header {
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+            color: #333;
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 2px solid #ddd;
+        }
+
+        h1.title {
+            margin: 0;
+            font-size: 36px;
+            color: #2c3e50; /* Peaceful, deep blue */
+        }
+
+        /* Warning Message Styling */
+        .warning {
+            background-color: #ffcc00; /* Yellow background */
+            color: #333;
+            font-weight: bold;
+            padding: 10px;
+            text-align: center;
+            margin: 20px 0;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+
+        /* Content Section Styling */
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Reduced size of news boxes */
+        .news-half {
+            width: 30%; /* Smaller width for news boxes */
+            background-color: white;
+            padding: 15px; /* Reduced padding */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+        }
+
+        .news-half:hover {
+            transform: scale(1.05);
+            background-color: #f0f0f0; /* Change background color on hover */
+        }
+
+        .news-half h2 {
+            color: #3f87a6; /* Soft blue */
+        }
+
+        .news-image {
+            width: 100%; /* Responsive image width */
+            max-width: 120px; /* Reduced maximum width for the image */
+            height: auto;
+            border-radius: 8px;
+            margin-top: 10px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .news-image:hover {
+            transform: scale(1.1);
+            opacity: 0.9;
+        }
+
+        .description {
+            margin: 10px 0;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .news-link {
+            display: inline-block;
+            color: #007BFF;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .news-link:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+
+        /* Back Button Styling */
+        .back-button {
+            background-color: #3f87a6; /* Soft blue */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 20px 0;
+            display: block;
+            width: 100%;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            border-radius: 5px;
+        }
+
+        .back-button:hover {
+            background-color: #2c6a8e; /* Darker blue */
+            transform: translateY(-5px);
+        }
+
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .heart {
+            color: #ff6f61;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .news-half {
+                width: 45%; /* Full width for smaller screens */
+            }
+
+            .content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .news-image {
+                max-width: 50%; /* Adjust image size for medium screens */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .news-image {
+                max-width: 50%; /* Adjust image size further for smaller screens */
+            }
+
+            .back-button {
+                width: auto;
+            }
+        }
+
+        /* New Sections Styling */
+        .new-section {
+            width: 10%;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .new-section:hover {
+            background-color: #e0f7fa; /* Change background color on hover */
+        }
+
+        .new-section h3 {
+            color: #3f87a6;
+        }
+
+        .new-section p {
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Title Section -->
+    <header>
+        <h1 class="title">Royal of illegal</h1>
+    </header>
+
+
+    <!-- Warning Message -->
+    <div class="warning">
+        Warning: click read more to redirect to website. This website contains restricted content. Proceed at your own risk.
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="content">
+        <!-- First Half: Hacker News -->
+        <div class="news-half">
+            <h2>Hacker News</h2>
+            <img src="https://res.cloudinary.com/dl8dmkhmv/image/upload/v1732431221/Screenshot_20241124_122325_p5ooai.jpg" alt="Hacker News" class="news-image">
+            <p class="description">The latest hacker-related news.</p>
+            <p>This is where you will provide detailed information about the hacker event</p>
+            <p> by Royal of Illegal, etc.</p>
+            <a href="https://thehackernews.com/?m=1" class="news-link">Read More</a>
+        </div>
+ 
+
+        <!-- Second Half: Normal News -->
+        <div class="news-half">
+            <h2>Normal News</h2>
+            <img src="https://res.cloudinary.com/dl8dmkhmv/image/upload/v1732429513/Screenshot_20241124_115250_atdtk2.jpg" alt="Normal News" class="news-image">
+            <p class="description">The latest normal news in India by Indian News Express.</p>
+            <p> This is where you will provide detailed information about</p> 
+            <p>he regular news event.</p>
+            <a href="https://indianexpress.com/" class="news-link">Read More</a>
+        </div>
+        <button class="back-button" onclick="window.history.back()">Back</button>
+        <!-- New Section 1 -->
+        <div class="new-section">
+            <h3>coming</h3>
+            <p>...</p>
+        </div>
+
+        <!-- New Section 2 -->
+        <div class="new-section">
+            <h3>coming</h3>
+            <p>...</p>
+        </div>
+
+        <!-- New Section 3 -->
+        <div class="new-section">
+            <h3>coming</h3>
+            <p>...</p>
+        </div>
+    </div>
+
+    <!-- Back Button -->
+    <button class="back-button" onclick="window.history.back()">Back</button>
+
+    <footer class="footer">
+        <p>Made with <i class="fas fa-heart heart"></i> by Royalstar Bimo</p>
+    </footer>
+
+</body>
+<script>
+    // Disable right-click and some dev tools
+    document.addEventListener('contextmenu', (event) => event.preventDefault());
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'F12' || (event.ctrlKey && event.shiftKey && event.key === 'I')) {
+            event.preventDefault();
+        }
+    });
+
+    // Display warning in console
+    console.log('%cStop!', 'color: red; font-size: 30px; font-weight: bold;');
+    console.log('%This is a restricted area. Proceeding further is at your own risk.', 'color: yellow; font-size: 16px;');
+
+    // Execute on page load
+    window.onload = () => {
+        typeText();
+        setInterval(toggleColors, 2000);
+    };
+</script>
+</html>
