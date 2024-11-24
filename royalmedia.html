@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROYAL 0F ILLEGAL</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(120deg, #8e44ad, #3498db, #2ecc71);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: white;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            animation: slideIn 1s forwards;
+        }
+
+        .social-links a {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-links a:hover {
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        }
+
+        .social-links a img {
+            width: 80%;
+            height: 80%;
+            object-fit: cover;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .social-links a:hover img {
+            transform: scale(1.1) rotate(10deg);
+        }
+
+        .social-links a::after {
+            content: attr(aria-label);
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            font-size: 0.8rem;
+            padding: 5px 10px;
+            border-radius: 5px;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-links a:hover::after {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(-5px);
+        }
+
+        footer {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        footer a:hover {
+            color: #e74c3c;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateY(100%);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* New title at the top */
+        .title {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* New warning description at the bottom */
+        .warning-description {
+            margin-top: 30px;
+            font-size: 1rem;
+            color: #ffcc00;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            border-radius: 10px;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            font-weight: bold;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Title at the top -->
+    <div class="title">ROYAL OF ILLEGAL</div>
+
+    <div class="container">
+        <h1>Connect with Me</h1>
+        <div class="social-links">
+            <a href="https://www.facebook.com/share/14W3LYrcEN/" target="_blank" aria-label="Facebook">
+                <img src="https://res.cloudinary.com/dl8dmkhmv/image/upload/v1732421025/icons8-facebook-24_a0grzr.png" alt="Facebook">
+            </a>
+            <a href="https://x.com/royalofillegal" target="_blank" aria-label="Twitter">
+                <img src="https://res.cloudinary.com/dl8dmkhmv/image/upload/v1732421371/icons8-twitter-24_uacdwr.png" alt="Twitter">
+            </a>
+            <a href="https://www.instagram.com/royal_of_illegal/profilecard/?igsh=MW9mNDFid3QwaDU4Mw==" target="_blank" aria-label="Instagram">
+                <img src="https://res.cloudinary.com/dl8dmkhmv/image/upload/v1732421371/icons8-instagram-24_ilvytq.png" alt="Instagram">
+            </a>
+            <a href="https://www.linkedin.com/in/chethan-royalstar-49750a320?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" aria-label="LinkedIn">
+                <img src="https://res.cloudinary.com/dl8dmkhmv/image/upload/v1732421371/icons8-linkedin-24_ndttri.png" alt="LinkedIn">
+            </a>
+            <a href="https://github.com/" target="_blank" aria-label="GitHub">
+                <img src="https://res.cloudinary.com/dl8dmkhmv/image/upload/v1732421371/icons8-github-50_gueklc.png" alt="GitHub">
+            </a>
+            <a href="https://www.youtube.com/@MCGGAMINGTELUGU" target="_blank" aria-label="YouTube">
+                <img src="https://res.cloudinary.com/dl8dmkhmv/image/upload/v1732421371/icons8-youtube-24_otuduq.png" alt="YouTube">
+            </a>
+            <a href="https://www.hackerrank.com/profile/rockingstarbimo1" target="_blank" aria-label="hackerrank">
+                <img src="https://res.cloudinary.com/dl8dmkhmv/image/upload/v1732421371/icons8-hackerrank-is-a-technology-company-that-focuses-on-competitive-programmin" alt="hackerrank">
+            </a>
+            <a href="https://www.snapchat.com/add/royalofillegal?share_id=fuFbpPCY0vA&locale=en-US" target="_blank" aria-label="Snapchat">
+                <img src="https://res.cloudinary.com/dl8dmkhmv/image/upload/v1732421371/icons8-snapchat-24_dpokgp.png" alt="Snapchat">
+            </a>
+            <a href="https://whatsapp.com" target="_blank" aria-label="WhatsApp">
+                <img src="https://res.cloudinary.com/dl8dmkhmv/image/upload/v1732421371/icons8-whatsapp-24_o1o8lz.png" alt="WhatsApp">
+            </a>
+            <a href="t.me/royalofillegal" target="_blank" aria-label="Telegram">
+                <img src="https://res.cloudinary.com/dl8dmkhmv/image/upload/v1732421371/icons8-telegram-app-24_glmwap.png" alt="Telegram">
+            </a>
+            <a href="kalkithedarkwar@gmail.com" target="_blank" aria-label="gmail">
+                <img src="https://res.cloudinary.com/dl8dmkhmv/image/upload/v1732421370/icons8-gmail-50_yq7yps.png" alt="gamil">
+            </a>
+            <a href="https://discord.com" target="_blank" aria-label="Discord">
+                <img src="images/discord.png" alt="Discord">
+            </a>
+        </div>
+        
+        <footer>
+            <p>Designed by <a href="#">Chethan Royalstar</a></p>
+        </footer>
+        <h3><a href="main.html">BACK</a></h3>
+
+        <!-- Warning description at the bottom -->
+        <div class="warning-description">
+            <p><strong>Visit:</strong>social media's by click the icons</p>
+            <p><strong>Warning:</strong> This site is intended for conatct and details purpose only. Any unauthorized use or illegal activity is strictly prohibited by the visiter.</p>
+        </div>
+    </div>
+</body>
+</html>
+
