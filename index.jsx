@@ -1,69 +1,147 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal_of_illegal</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Courier New', Courier, monospace;
+            color: #0f0;
+            background-color: #000;
+            overflow: hidden;
+        }
 
-const Portfolio = () => {
-  return (
-    <div className="min-h-screen bg-gray-900 text-white p-4">
-      {/* Header */}
-      <header className="flex justify-between items-center py-4 border-b border-gray-700">
-        <h1 className="text-2xl font-bold">Hacker Secrets</h1>
-        <Button variant="outline" className="text-green-400 hover:bg-green-700">Login</Button>
-      </header>
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 4px 20px rgba(0, 255, 0, 0.4);
+        }
 
-      {/* Hero Section */}
-      <section className="text-center mt-10">
-        <motion.h2
-          className="text-4xl font-extrabold"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          Welcome to the Hacker's Portfolio
-        </motion.h2>
-        <p className="text-gray-400 mt-4">
-          Discover advanced secrets and projects built with the latest technologies.
-        </p>
-      </section>
+        header h1 {
+            font-size: 2rem;
+            animation: glow 1.5s infinite alternate;
+        }
 
-      {/* Secret Projects Section */}
-      <section className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {Array.from({ length: 6 }).map((_, index) => (
-          <Card key={index} className="bg-gray-800 border border-gray-700">
-            <CardContent>
-              <h3 className="text-xl font-semibold mb-2">Secret Project {index + 1}</h3>
-              <p className="text-gray-400 mb-4">
-                Dive into this advanced project to uncover the secrets behind its implementation.
-              </p>
-              <Button variant="outline" className="text-green-400 hover:bg-green-700">
-                View Details
-              </Button>
-            </CardContent>
-          </Card>
-        ))}
-      </section>
+        header nav a {
+            color: #0f0;
+            text-decoration: none;
+            margin: 0 15px;
+            position: relative;
+            font-size: 1.2rem;
+        }
 
-      {/* Login Section */}
-      <section className="mt-16 bg-gray-800 p-6 rounded-2xl shadow-lg mx-auto max-w-md">
-        <h3 className="text-2xl font-bold mb-4">Access Secret Page</h3>
-        <Input
-          type="password"
-          placeholder="Enter the secret key"
-          className="mb-4 text-black"
-        />
-        <Button className="w-full bg-green-600 hover:bg-green-800">
-          Unlock Secrets
-        </Button>
-      </section>
+        header nav a::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0;
+            height: 2px;
+            background-color: #0f0;
+            transition: width 0.3s ease-in-out;
+        }
 
-      {/* Footer */}
-      <footer className="mt-16 text-center text-gray-500 text-sm">
-        <p>&copy; {new Date().getFullYear()} Hacker Secrets. All rights reserved.</p>
-      </footer>
+        header nav a:hover::before {
+            width: 100%;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #0f0, 0 0 20px #0f0, 0 0 30px #00ff00;
+            }
+            to {
+                text-shadow: 0 0 20px #0f0, 0 0 30px #00ff00, 0 0 40px #00ff00;
+            }
+        }
+
+        .container {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .matrix {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                rgba(0, 255, 0, 0.1),
+                rgba(0, 255, 0, 0.1) 2px,
+                transparent 2px,
+                transparent 5px
+            );
+            pointer-events: none;
+            animation: scan 5s linear infinite;
+        }
+
+        @keyframes scan {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(100%);
+            }
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            animation: glow 1.5s infinite alternate;
+            z-index: 1;
+        }
+
+        button {
+            background-color: transparent;
+            border: 2px solid #0f0;
+            padding: 10px 20px;
+            font-size: 1.5rem;
+            color: #0f0;
+            cursor: pointer;
+            z-index: 1;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0f0;
+            color: #000;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            font-size: 0.9rem;
+            color: rgba(0, 255, 0, 0.7);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ROYALSTAR</h1>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="project.html">Projects</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="matrix"></div>
+        <h2>Welcome to the ROYAL_OF_ILLEGAL</h2>
+        <button onclick="alert('You clicked!')">Dive In</button>
     </div>
-  );
-};
 
-export default Portfolio;
+    <footer>
+        © 2025 royal| Keep Hacking the Future
+    </footer>
+</body>
+</html>
