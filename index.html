@@ -37,6 +37,13 @@
         setTimeout(() => {
             window.location.href = "https://royal-of-illegal.github.io/royalstar"; // Change this to your site URL
         }, 3000);
+         // Disable right-click and some dev tools
+         document.addEventListener('contextmenu', (event) => event.preventDefault());
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'F12' || (event.ctrlKey && event.shiftKey && event.key === 'I')) {
+                event.preventDefault();
+            }
+        });
     </script>
 </body>
 </html>
